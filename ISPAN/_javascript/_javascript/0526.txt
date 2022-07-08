@@ -1,0 +1,39 @@
+<style></style>  
+
+     -<style> opening tag
+     |
+     |content
+     |
+     -</style> closeing tag
+
+	↑element元素
+
+<div>display:block 	<span>display:inline
+(垂直)			(水平)
+□			□□
+□
+
+
+style sheet 樣式表
+
+
+
+onclick 設定(註冊)事件處理器函式
+event -handler 
+      -listener	監聽器
+
+
+<input type="text" size="10" id="number1" value="20" />
+type,size,id,value = attribute (html屬性)
+
+instance 實體(實例)
+
+
+ES2015 template literal 樣板字面值
+console.log(ˋv1=${v1}ˋ); string interpolation字串內插
+
+
+
+let 不可重複宣告
+
+

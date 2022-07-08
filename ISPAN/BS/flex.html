@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        .wrap {
+            background: #aaa;
+            display: flex;
+            flex-direction: row;
+            /*flex-direction: column;*/
+            justify-content: flex-end;
+            align-items: center;
+            /*height: 200px;*/
+
+        }
+
+        .box {
+            width: 20%;
+            padding-left: 15px;
+            padding-right: 15px;
+            /*min-height: 100px;
+            outline: 1px solid goldenrod;
+            flex-grow: 1;*/
+        }
+
+        .img-wrap>img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box">
+            <div class="img-wrap">
+                <img src="https://img.ltn.com.tw/Upload/ent/page/800/2021/03/05/3456995_2.jpg" alt="">
+            </div>
+            <h3>small1</h3>
+            <p>12345678910</p>
+        </div>
+        <div class="box">
+            <div class="img-wrap">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw2tTsjyEDgsj_16YsLeZPV2GumbS3jeV7k7pAZB_-9-FvDOlBDkmRxg3qzj1u1TRVvRA&usqp=CAU"
+                    alt="">
+            </div>
+            <h3>small2</h3>
+            <p>12345678910</p>
+        </div>
+        <div class="box">
+            <div class="img-wrap">
+                <img src="https://s.yimg.com/ny/api/res/1.2/wnvEwf56rFddUo1VvsvX1w--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTk2MDtjZj13ZWJw/https://s.yimg.com/uu/api/res/1.2/Swbu3n6IJHftWZHU.0gj5g--~B/aD01MjA7dz01MjA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/tagsis_com_142/e0a6e047986217098b4239a30478d0f5"
+                    alt="">
+            </div>
+            <h3>small3</h3>
+            <p>12345678910</p>
+        </div>
+    </div>
+</body>
+
+</html>

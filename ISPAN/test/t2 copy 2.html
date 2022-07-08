@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .all {
+            height: 100%;
+            overflow: hidden;
+            background: radial-gradient(#1b2735 0%, #090a0f 100%);
+        }
+
+        .container {
+            position: relative;
+            max-width: 1200px;
+            padding-top: 150px;
+            padding-bottom: 150px;
+            font-size: 15px;
+            color: rgb(59, 56, 56);
+        }
+
+        .slick-prev:before {
+            margin-left: 25px;
+        }
+
+        .slick-next:before {
+            margin-left: -45px;
+        }
+
+        .autoplay {
+            max-width: 100%;
+            margin-left: 15px;
+            margin: auto;
+            padding-top: 30px;
+        }
+
+        .autoplay img {
+            max-width: 100%;
+            border-radius: 5%;
+            height: 230px;
+            margin: auto;
+            box-shadow: 0 0 5px #5e8ba5;
+        }
+
+        .card {
+            background-color: transparent;
+            font-weight: bold;
+            color: whitesmoke;
+            margin: auto;
+            padding-bottom: 80px;
+            text-align: center;
+        }
+
+        .title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1rem;
+            color: whitesmoke;
+            padding-bottom: 40px;
+
+        }
+
+        .box {
+            color: white;
+            max-width: 430px;
+            height: 700px;
+            background: transparent url("887.png") 50% 50% no-repeat;
+            background-size: contain;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div class="container">
+        <div>
+
+        </div>
+            <div class=" row col-12 box">
+                <div class="autoplay">
+                    <div class="slide-2"><img src="12.jpg" alt=""></div>
+                    <div class="slide-3"><img src="13.jpg" alt=""></div>
+                    <div class="slide-1"><img src="14.jpg" alt=""></div>
+                </div>
+                <div class="card">
+                    <div class="title">貓貓</div>
+                    <div class="a1">
+                        <p>英短 妹妹 五歲</p>
+                        <p>黃色</p>
+                        <p>高雄市鳳山區</p>
+                        <p>貓貓超級親人快來認養~~~</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+
+    <script>
+
+
+        $('.autoplay').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
+    </script>
+</body>
+
+</html>

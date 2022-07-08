@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+
+        .box {
+            margin: 50px auto;
+            width: 900px;
+            height: 600px;
+            border: 1px solid #d8a630;
+            text-align: center;
+        }
+        p {
+            font-size: 15px;
+            text-align: center;
+        }
+        #play > p {
+            font-size: 20px;
+            text-align: left;
+            padding-left:50px;
+        }
+
+        #result1 {
+            font-size: 15px;
+            display:none;
+        }
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 25px;
+        }
+
+        .button1 {
+            font-size: 0.5em;
+            background-color: steelblue;
+            margin-left: 700px;
+        }
+          
+        .button2 {
+            background-color: indianred;
+
+        }
+
+        .button3 {
+            font-size: 0.5em;
+            background-color: chocolate;
+        }
+
+
+        .button:hover {
+            background-color: grey;
+        }
+
+
+        input {
+            border-radius: 50px;
+            width:80px;
+            height:35px;
+            text-align:center;
+        }
+          
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>猜數字遊戲</h2>
+        <button class="button button1"onclick="rest()">重啟遊戲</button>
+
+        <div id="play">
+            <p>玩家猜測的數字:</p>
+            <input type="text" size="5" id="number1" value="" />
+            <input type="text" size="5" id="number2" value="" />
+            <input type="text" size="5" id="number3" value="" />
+            <input type="text" size="5" id="number4" value="" />
+            <input type="text" size="5" id="number5" value="" />
+            <br />
+            <br />
+            <button class="button button2" onclick="play()">檢視猜測結果</button>
+        </div>
+        <div id="result">
+            <p id="player"></p>
+            <p id="total"></p>
+        </div>
+        <div id="computer">
+            <button id="pp"class="button button3"onclick="hide()">顯示莊家數字</button>
+            <p id="result1">莊家的數字有:</p>
+        </div>
+    </div>
+
+    <script>
+        var num = [];
+        var isclick = new Boolean(false);
+        cpnum();
+            document.getElementById('result1').textContent =  num;
+        
+
+        function cpnum() {
+            for (var i = 0; i < 5; i++) {               
+                num[i] = (Math.floor(Math.random() * 10));
+                if (i != 0) {
+                for (var j = 1; j < num.length; j++) {
+                    if (num[j - 1] == num[i]) {
+                        do {
+                            num[i] = (Math.floor(Math.random() * 10));
+                            j = 1;
+                        } while (num[j - 1] == num[i])
+                    }
+                }
+                }
+            }
+            num.sort()
+        }
+       
+        function play() {
+            var total = 0;
+            var player = [];
+            document.getElementById('player').textContent = "你猜對的數字有:"        
+                var s1 = document.getElementById('number1').value;
+                var s2 = document.getElementById('number2').value;
+                var s3 = document.getElementById('number3').value;
+                var s4 = document.getElementById('number4').value;
+                var s5 = document.getElementById('number5').value;
+        
+            var n1 = parseInt(s1);
+            var n2 = parseInt(s2);
+            var n3 = parseInt(s3);
+            var n4 = parseInt(s4);
+            var n5 = parseInt(s5);
+            console.log(n1);
+
+          
+            for (var i = 1; i <= num.length; i++) {
+             
+                if (num.includes(eval('n'+i))) {
+                    total += 1;                  
+                    player[total-1] = eval('n' + i);
+                    
+                }
+                player.sort()
+            }
+          
+                document.getElementById('player').textContent = player;
+            
+                document.getElementById('total').textContent = `猜中${total}個`;
+                           
+        }      
+
+        function hide() {
+
+            if (isclick == false) {
+                result1.style.display = 'block';
+                document.getElementById("pp").innerHTML = "隱藏莊家數字";          
+                isclick = true;
+             }
+             else {
+                result1.style.display = 'none';
+                document.getElementById("pp").innerHTML = "顯示莊家數字";
+                isclick = false;
+             }
+
+        }
+
+        function rest() {
+            location.reload();
+        }
+    </script>
+</body>
+</html>

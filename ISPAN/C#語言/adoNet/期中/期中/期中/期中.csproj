@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{090C31FD-9C00-492F-A403-482306459717}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>期中</RootNamespace>
+    <AssemblyName>期中</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts.Designer.cs">
+      <DependentUpon>Accounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMember.Designer.cs">
+      <DependentUpon>AddMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CakeDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CakeDetail.Designer.cs">
+      <DependentUpon>CakeDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Car.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Car.Designer.cs">
+      <DependentUpon>Car.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalVar.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager.Designer.cs">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MCakeDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MCakeDetail.Designer.cs">
+      <DependentUpon>MCakeDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Member.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Member.Designer.cs">
+      <DependentUpon>Member.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Morder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Morder.Designer.cs">
+      <DependentUpon>Morder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyFavorite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyFavorite.Designer.cs">
+      <DependentUpon>MyFavorite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order.Designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Accounts.resx">
+      <DependentUpon>Accounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMember.resx">
+      <DependentUpon>AddMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CakeDetail.resx">
+      <DependentUpon>CakeDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Car.resx">
+      <DependentUpon>Car.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager.resx">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MCakeDetail.resx">
+      <DependentUpon>MCakeDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Member.resx">
+      <DependentUpon>Member.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Morder.resx">
+      <DependentUpon>Morder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFavorite.resx">
+      <DependentUpon>MyFavorite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order.resx">
+      <DependentUpon>Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d2fb2d550a8cab5a5e6819751f3b929a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\未命名設計 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\未命名設計-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\未命名設計-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EXIT111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QUITT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NEWEXIT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NEWEXIT1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NEWQUIT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewPerson.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAR1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\member.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\member1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\愛心.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\愛心1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\member2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\member3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\未命名設計-removebg-preview2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOVE2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOVE3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOVE21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOVE22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOVE23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\SEARCH.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

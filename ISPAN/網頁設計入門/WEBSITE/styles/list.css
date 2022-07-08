@@ -1,0 +1,24 @@
+.list1 {
+            list-style-type: square;
+            border: 3px dotted gray;
+            /*border-radius: 5px 10px 15px 20px; /*順時針順序*/
+            /* border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;*/
+            border-radius: 20px 0 20px 0;
+        }
+
+        .list2 {
+            list-style-type: none;
+            list-style-image: url(../images/arre.jpg);
+        }
+
+        .in {
+            background-color: gray;
+            list-style-position: inside;
+        }
+
+        .out {
+            background-color: gray;
+            list-style-position: outside;
+            /* 預設 */
+        }

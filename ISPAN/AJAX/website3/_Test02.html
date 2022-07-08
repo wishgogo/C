@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="javascripts/jquery-3.6.0.min.js"></script>
+    <script>
+        function sendAjaxRequest(url, username, password) {
+            return new Promise(function (resolve,reject) {
+                $.ajax({
+                    method: 'get',
+                    url,
+                    //contentType: "application/x-www-form-urlencoded;charset=utf-8",
+                    data: { username, password },
+                    dataType: 'text',
+                    success: function (data) {
+                        resolve(data)
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        reject(`${jqXHR.status}--${textStatus}--${errorThrown}`);
+                    }
+                });
+            });           
+        }
+        async function f1() {
+            try {
+                let response = await sendAjaxRequest("_AjaxServer02.aspx", "hello", "kitty");
+                $("#div1").append(`<div>${response}</div>`);
+
+                response = await sendAjaxRequest("data/Emp.json");
+                $("#div1").append(`<div>${response}</div>`);
+            }
+            catch (err) {
+                $("#div1").append(`<div style="color:red;">${err}</div>`);
+            }           
+
+            //for (let i = 1; i <= 3; i++) {
+            //    let response = await sendAjaxRequest("_AjaxServer02.aspx", "hello", "kitty");
+            //    $("#div1").append(`<div>${response}</div>`);
+            //} 
+
+            //return 100;
+        }
+
+        $(function () {
+            f1()
+                .then(function (data) {
+                    console.log(`data=${data}`)
+                });
+
+            //(async function () {
+            //    let response = await sendAjaxRequest("_AjaxServer02.aspx", "hello", "kitty");
+            //    $("#div1").append(`<div>${response}</div>`);
+            //    response = await sendAjaxRequest("data/Emp.json");
+            //    $("#div1").append(`<div>${response}</div>`);
+            //    //return undefined;
+            //})()                  //IIFE
+            //    .then(function (data) {
+            //        console.log(`data=${data}`);
+            //    });
+
+
+            $("#form1").submit(function (e) {
+                e.preventDefault();
+                fetch("_AjaxServer03.aspx", {
+                    method: 'POST',
+                    body: $(this).serialize(),
+                    headers: {
+                        'content-type': 'application/x-www-form-urlencoded; charset=utf-8'
+                    }
+                })
+                    .then(function (response) {
+                        return response.text();
+                    })
+                    .then(function (text) {
+                        alert(text);
+                    });
+            });
+
+            $("#btn1").click(function () {
+
+                $("#div2").html("");
+
+                fetch("data/Emp.json")
+                    .then(function (response) {
+                        return response.json();
+                    })
+                    .then(function (emps) {
+                        emps.forEach(function (value, index) {
+                            $("#div2").append(`<div>${value.EmpId} ${value.Name} ${value.Age}歲</div>`);
+                        });
+
+                    });
+
+            });
+        })
+    </script>
+
+</head>
+<body>
+    <h1>Hello worold</h1>
+    <div id="div1"></div>
+    <form id="form1">
+        username <input type="text" name="username" value="Hello Kitty" />
+        <input type="submit" />
+    </form>
+    <button type="button" id="btn1">fetch Emp.json</button>
+    <div id="div2"></div>
+</body>
+</html>

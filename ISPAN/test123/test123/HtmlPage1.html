@@ -1,0 +1,50 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RESTful API 實作</title>
+
+
+
+</head>
+<body>
+
+
+    <div class="a">
+       
+
+    </div>
+
+</body>
+</html>
+<script src="Scripts/jquery-3.6.0.min.js"></script>
+<script>
+        var item = "";
+    $.ajax({
+
+        url: 'http://localhost:59050/movie20220617CC.json',
+
+        success: function (data) {
+            console.log(data.時刻表[0].地區.length);
+            for (var i = 0; i < data.時刻表[0].地區.length; i++) {
+                item += "<h2>" + data.時刻表[0].地區[i].名稱 + "</h2>";
+
+                for (var j = 0; j < data.時刻表[0].地區[i].電影院.length; j++) {
+                    item += "<h4>" + data.時刻表[0].地區[i].電影院[j].名稱 + "</h4>";
+
+                    for (var k = 0; k < data.時刻表[0].地區[i].電影院[j].場次.length; k++) {
+                        item += "<h4>" + data.時刻表[0].地區[i].電影院[j].場次[k].時間 + "</h4>";
+
+                    }
+                }
+
+            };
+                $(".a").append(item);
+            },
+            error: function () {
+              
+            }
+        });
+</script>
+
+

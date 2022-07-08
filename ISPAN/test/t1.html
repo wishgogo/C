@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
+    <style>
+        .container {
+            max-width: 1200px;
+            padding-top: 150px;
+            font-size: 15px;
+
+            color: rgb(59, 56, 56);
+        }
+
+        .card {
+            margin: auto;
+        }
+
+        .title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 25px;
+            color: whitesmoke;
+            background-color: #4bacb9;
+        }
+
+        .a1 {
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+        button {
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="card bg-light mb-3" style="width: 30rem;">
+                <div class="card-header title">請選擇喜歡的貓貓類型</div>
+                <div class="card-body">
+                    <label class="a1" for="inputState">品種</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>全部</option>
+                        <option>英國短毛貓</option>
+                        <option>美國短毛貓</option>
+                        <option>異國短毛貓</option>
+                        <option>俄羅斯藍貓</option>
+                        <option>曼斥肯</option>
+                        <option>布偶貓</option>
+                        <option>緬因貓</option>
+                        <option>波斯貓</option>
+                        <option>布偶貓</option>
+                        <option>金吉拉</option>
+                        <option>米克斯</option>
+                    </select>
+                    <br>
+                    <label class="a1" for="inputState">性別</label>
+                    <br>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline1" name="customRadioInline"
+                            class="custom-control-input" checked>
+                        <label class="custom-control-label" for="customRadioInline1">全部</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline2" name="customRadioInline"
+                            class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline2">公</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="customRadioInline3" name="customRadioInline"
+                            class="custom-control-input">
+                        <label class="custom-control-label" for="customRadioInline3">母</label>
+                    </div>
+                    <br>
+                    <br>
+                    <label class="a1" for="inputState">顏色</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>全部</option>
+                        <option>黑色</option>
+                        <option>灰色</option>
+                        <option>藍色</option>
+                        <option>橘色</option>
+                        <option>白色</option>
+                        <option>多種色</option>
+                    </select>
+                    <br>
+
+                    <label class="a1" for="inputState">地點</label>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-4">
+                                <select name="city" id="city" class="form-control">
+                                    <option>全部</option>
+                                    <option>臺北市</option>
+                                    <option>新北市</option>
+                                    <option>基隆市</option>
+                                    <option>新竹市</option>
+                                    <option>桃園市</option>
+                                    <option>新竹縣</option>
+                                    <option>宜蘭縣</option>
+                                    <option>臺中市</option>
+                                    <option>苗栗縣</option>
+                                    <option>彰化縣</option>
+                                    <option>南投縣</option>
+                                    <option>雲林縣</option>
+                                    <option>高雄市</option>
+                                    <option>臺南市</option>
+                                    <option>嘉義市</option>
+                                    <option>嘉義縣</option>
+                                    <option>屏東縣</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row" style="padding-top:50px;">
+                        <button type="button" class="btn btn-info" style="width:150px;">確認</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
+
+        <script>
+        </script>
+</body>
+
+</html>

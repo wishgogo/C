@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="javascripts/jquery-3.6.0.min.js"></script>
+    <script>
+        let str = '{"name":"kitty"}';
+        try {
+
+            let obj = JSON.parse(str);
+            //throw "例外發生了!!!";
+            throw new Error("例外發生了...");
+            console.log(obj.name);
+
+        }
+        catch (err) {
+            console.log(err.toString()); //Error: 例外發生了...
+            console.log(err.message); //例外發生了...
+        }
+
+
+        $(function () {
+
+            //以Promise送ajax請求
+            $("button:eq(2)").click(function () {
+
+                new Promise(function (resolve, reject) {
+                    $.ajax({
+                        method: 'get',
+                        url: '_AjaxServer03.aspx',
+                        data: { username: 'Hello Kitty' },
+                        success: function (data) {
+                            resolve(data);
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            reject(`${jqXHR.status}--${textStatus}--${errorThrown}`);
+                        }
+                    });
+                })
+                    .then(
+                        function (data) {
+                            alert('1 ' + data);
+                            //return new Promise(function (resolve,reject) {
+                            //    setTimeout(function () {
+                            //        //resolve('時間到了!!!');
+                            //        reject('時間到了xxx');
+                            //    }, 1000);
+                            //});  
+                            throw "我拋出了一個例外";
+
+                            //1. return a value(100)--> then回傳的promise 就被解決了(解決值=undefined)
+                            //2. return undefined --> then回傳的promise 就被解決了(解決值=100)
+                            //3. return a Promise(被解決了) --> 
+                            //      then回傳的promise 就被解決了(內層promise的解決值 == 外層promise的解決值)
+                            //4. return a Promise(被拒絕了) --> 
+                            //      then回傳的promise 就被拒絕了(內層promise的拒絕原因 == 外層promise的拒絕原因)
+                            //5. throw a exception -->
+                            //   then回傳的promise 就被拒絕了(外層promise的拒絕原因==我們所拋出的例外物件)
+                        }
+                        //,
+                        //function (errReason) {
+                        //    alert(errReason)
+                        //}
+                    )
+                    .then(function (value) {
+                        alert('2 ' + value);
+                    })
+                    .catch(function (errReason) {
+                        alert('3 ' + errReason)
+                    });
+            });
+
+            $("button:eq(1)").click(function () {
+                let xhr = new XMLHttpRequest();
+                xhr.open('get', 'data/Emp.json', true);
+                xhr.onload = function () {
+                    if (xhr.status == 200) {
+                        let array = JSON.parse(xhr.responseText);
+                        //{
+                        //    "EmpId": "E001",
+                        //    "Name": "Hello",
+                        //    "Age": 18
+                        //}
+                        $.each(array, function (index, value) {
+                            $("#u1").append(`<li>${value.EmpId} ${value.Name} ${value.Age}歲</li>`);  //附加么子
+                        });
+                    }
+                    else {
+                        //略
+                    }
+                }
+                xhr.send(null);
+            });
+
+            $("#form1").submit(function (event) {
+                event.preventDefault();
+
+                let xhr = new XMLHttpRequest();
+                xhr.open("post", "_AjaxServer01.aspx", true);
+                xhr.onload = function () {
+                    if (xhr.status == 200) {
+                        if (xhr.responseText == 'pass') {
+                            alert("已驗證...")
+
+                        }
+                        else if (xhr.responseText == 'fail') {
+                            alert("驗證失敗...")
+                        }
+                    }
+                    else {
+                        alert(`${xhr.status} ${xhr.statusText}`);
+                    }
+                }
+                xhr.setRequestHeader("content-type","application/x-www-form-urlencoded;charset=utf-8");
+                let formData = $(this).serialize();
+                xhr.send(formData);
+
+            });
+
+            $("button:first").click(function () {
+
+                let xhr = new XMLHttpRequest();
+                xhr.open("get", "data/Emp.json", true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+                        if (xhr.status == 200) {
+                            $("#div1").html(`<div style="color:blue">${xhr.responseText}</div>` );
+                        }
+                        else {
+                            $("#div1").html(`<div style="color:red">${xhr.status} ${xhr.statusText}</div>`);
+                        }
+                    }
+                }
+                xhr.send(null);
+
+
+                //$.ajax({
+                //    //async:true,
+                //    method: 'get',
+                //    url: '_AjaxServer03.aspx',
+                //    data: { username: '采臣' },
+                //    success: function (data) {
+                //        //alert(data);
+                //        $("#div1").html(data);
+                //        setTimeout(function () { $("#div1").html("") }, 3000);
+                //    },
+                //    error: function (jqXHR, textStatus, errorThrown) {
+                //        alert(`${jqXHR.status}--${textStatus}--${errorThrown}`);
+                //    }
+                //});              
+
+            });
+
+        });
+
+    </script>
+
+</head>
+<body>
+    <h1>Hello world</h1>
+    <button>發送Ajax請求</button>
+    <div id="div1"></div>
+    <form id="form1">
+        <p>
+            username <input type="text" name="username" />
+        </p>
+        <p>
+            password <input type="text" name="password" />
+        </p>
+        <input type="submit" value="以ajax送出" />
+    </form>
+    <button>以Ajax方式請求Emp.json</button>
+    <ul id="u1">
+    </ul>
+    <button>以Promise送ajax請求</button>
+</body>
+</html>

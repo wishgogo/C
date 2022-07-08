@@ -1,0 +1,88 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
+</head>
+<style>
+    img{
+        width:320px;
+    }
+    .container{
+        width:1000px;
+        background-color:antiquewhite;
+    }
+</style>
+<body>
+
+    <div class="container">     
+        <div class="a">
+              
+        </div>
+    </div>
+</body>
+</html>
+<script src="lib/jquery/jquery.min.js"></script>
+<script>
+    var item = "";
+    $.ajax({
+        url: 'http://localhost:55065/movie.json',
+        success: function (data) {
+            for (var i = 0; i < data.Data.length; i++) {
+                item+="<div>"
+                item += "<img src=" + data.Data[i].圖片網址 + " />";
+
+                item += "<h2> 中文名稱 :" + data.Data[i].中文名稱 + " </h2>";
+                item += "<h2> 英文名稱 :" + data.Data[i].英文名稱 + " </h2>";
+                item += "<h3> 分級 :" + data.Data[i].分級 + " </h2>";
+                item += "<h3> 劇情分類 :" + data.Data[i].劇情分類 + " </h2>";
+                item += "<h3> 上映日期 :" + data.Data[i].上映日期 + " </h2>";
+                item += "<h3> 片長 :" + data.Data[i].片長 + " </h2>";
+                item += "<h3> 發行公司 :" + data.Data[i].發行公司 + " </h2>";
+
+                item += "<h3> 電影簡介:" + data.Data[i].電影簡介 + " </h2>";
+
+                for (var j = 0; j < data.Data[i].時刻表.length; j++) {
+
+                    for (var k = 0; k < data.Data[i].時刻表[j].地區.length; k++) {
+
+                        item += "<h3> 地區:" + data.Data[i].時刻表[j].地區[k].名稱 + " </h2>";
+
+                        for (var n = 0; n < data.Data[i].時刻表[j].地區[k].電影院.length; n++) {
+
+                            item += "<h3> 電影院:" + data.Data[i].時刻表[j].地區[k].電影院[n].名稱 + " </h2>";
+
+                            for (var v = 0; v < data.Data[i].時刻表[j].地區[k].電影院[n].場次.length; v++) {
+                                item += "<span> 時間:" + data.Data[i].時刻表[j].地區[k].電影院[n].場次[v].時間 + " </span>";
+                            }
+                        }
+                    }
+                }
+                item += "</div>"
+            }
+            $(".a").append(item);
+        },
+        error: function () {
+
+        }
+    });
+</script>
+  <!--for (var i = 0; i < data.Data.length; i++) {
+
+                for (var j = 0; j < data.Data[i].時刻表.length; j++) {
+
+                    for (var k = 0; k < data.Data[i].時刻表[j].地區.length; k++) {
+                        //console.log(data.Data[i].時刻表[j].地區[k].名稱);
+
+                        if (data.Data[i].時刻表[j].地區[k].名稱 == "彰化") {
+                            item += "<h2> 中文名稱 :" + data.Data[i].中文名稱 + " </h2>";
+                        }
+                    }
+                }
+
+            }-->

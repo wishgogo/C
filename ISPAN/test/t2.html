@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
+    <style>
+        .all {
+            background-color: #101c23;
+        }
+
+        .container {
+            position: relative;
+            max-width: 1200px;
+            padding-top: 150px;
+            font-size: 15px;
+            color: rgb(59, 56, 56);
+
+        }
+
+        .card {
+            margin: auto;
+            background-color: transparent;
+            border: 0px;
+        }
+
+        .title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 25px;
+            color: whitesmoke;
+            background-color: #4bacb9;
+        }
+
+        .a1 {
+            font-weight: bold;
+            font-size: 23px;
+            text-align: center;
+            background-color: whitesmoke;
+            color: #4bacb9;
+        }
+
+        .autoplay {
+            max-width: 70%;
+            margin: auto;
+        }
+
+        .autoplay img {
+            max-width: 100%;
+            border-radius: 20%;
+            margin-bottom: 15px;
+            height: 400px;
+            margin: auto;
+        }
+
+        .detail {
+            padding-bottom: 50px;
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+            color: darkcyan;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 4rem;
+            bottom: 0;
+            right: 25px;
+            color: rgb(187, 58, 58);
+
+        }
+
+        .re {
+            position: absolute;
+            font-size: 4rem;
+            bottom: 0;
+            left: 25px;
+            color: darkcyan;
+        }
+
+        .star {
+            position: absolute;
+            font-size: 4rem;
+            top: 100px;
+            right: 25px;
+            color: rgb(250, 209, 104);
+        }
+
+        .teest {
+            width: 500px;
+            background-color: #4bacb9;
+            height: 500px;
+        }
+
+        .jigsaw1 {
+            font-size: 55px;
+            width: 6em;
+            height: 6em;
+            margin: 50px;
+            position: relative;
+            -webkit-border-radius: .5em;
+            -moz-border-radius: .5em;
+            border-radius: .5em;
+        }
+
+        .jigsaw1,
+        .jigsaw1 span {
+            background-color: #0284cf;
+        }
+
+        .jigsaw1 .t {
+            width: 2em;
+            height: 2em;
+            position: absolute;
+            top: -1.5em;
+            left: 2em;
+            -webkit-border-radius: 4em;
+            -moz-border-radius: 4em;
+            border-radius: 4em;
+        }
+
+        .jigsaw1 .r {
+            width: 2em;
+            height: 2em;
+            position: absolute;
+            top: 2em;
+            left: 5.5em;
+            -webkit-border-radius: 4em;
+            -moz-border-radius: 4em;
+            border-radius: 4em;
+        }
+
+        .jigsaw1 .b {
+            width: 1.8em;
+            height: 1.8em;
+            position: absolute;
+            top: 4.5em;
+            left: 2.2em;
+            -webkit-border-radius: 4em;
+            -moz-border-radius: 4em;
+            border-radius: 4em;
+            background-color: #fff;
+        }
+
+        .jigsaw1 .l {
+            width: 1.8em;
+            height: 1.8em;
+            position: absolute;
+            top: 2.2em;
+            left: -.4em;
+            -webkit-border-radius: 4em;
+            -moz-border-radius: 4em;
+            border-radius: 4em;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div class="container">
+            <!-- <div class="jigsaw1">
+                <p style="font-size: 30px;color: #fff;text-align: center;padding-top: 15px;padding-left:15px ;">英短</p>
+                <span class="t"></span>
+                <span class="r"></span>
+                <span class="b"></span>
+                <span class="l"></span>
+            </div> -->
+            <div class="heart">
+                <span><i class="fa-solid fa-heart"></i></span>
+            </div>
+            <div class="re">
+                <span><i class="fa-solid fa-arrows-rotate"></i>
+                    </i></span>
+            </div>
+            <div class="star">
+                <span><i class="fa-solid fa-star"></i></i>
+                    </i></span>
+            </div>
+            <div class="row col-12">
+                <div class="autoplay">
+                    <div class="slide-2"><img src="12.jpg" alt=""></div>
+                    <div class="slide-3"><img src="13.jpg" alt=""></div>
+                    <div class="slide-1"><img src="14.jpg" alt=""></div>
+                </div>
+            </div>
+
+            <div class="row detail" style="padding-right:50px;">
+                <div class="card col-7">
+                    <div class="card-header title">貓貓</div>
+                    <div class="card-body a1">
+                        <p class="card-text">英短 妹妹 五歲</p>
+                        <p class="card-text">黃色</p>
+                        <p class="card-text">高雄市鳳山區</p>
+                        <p class="card-text">貓貓超級親人快來認養~~~</p>
+                        <p class="card-text">貓貓超級親人快來認養~~~</p>
+                        <p class="card-text">貓貓超級親人快來認養~~~</p>
+                        <p class="card-text">貓貓超級親人快來認養~~~</p>
+                        <p class="card-text">貓貓超級親人快來認養~~*~</p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+
+    <script>
+
+
+        $('.autoplay').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
+    </script>
+</body>
+
+</html>

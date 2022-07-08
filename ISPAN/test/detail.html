@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
+
+    <style>
+        .container {
+            max-width: 1200px;
+            padding-top: 100px;
+            font-size: 15px;
+            background-color: antiquewhite;
+            color: rgb(59, 56, 56);
+        }
+
+
+        .member {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .member img {
+            max-width: 60%;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .member h6 {
+            font-weight: bold;
+            padding-bottom: 10px;
+        }
+
+        .member button {
+            font-size: 18px;
+        }
+
+        .slider-for img {
+            margin: auto;
+            max-width: 100%;
+            height: 300px;
+        }
+
+        .slider-nav {
+            margin: auto;
+            max-width: 80%;
+        }
+
+        .slider-nav img {
+            max-width: 100%;
+            height: 50px;
+        }
+
+        .service,
+        h5,
+        h6,
+        p,
+        span {
+            font-weight: bold;
+        }
+
+        .s1 {
+            font-size: 17px;
+            text-align: center;
+        }
+
+        .price {
+            font-size: 20px;
+            color: darkgoldenrod;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-4 member">
+                <img src="4.jpg" alt="">
+                <h5>小小兵</h5>
+                <p>保母服務</p>
+                <p>台北市 大安區</p>
+                <p><i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    (0)
+                </p>
+                <button type="button" class="btn btn-warning"><i class="fa-regular fa-calendar-check"></i> 預約</button>
+                <button type="button" class="btn btn-outline-danger"><i class="fa-regular fa-heart"></i> 加入收藏</button>
+            </div>
+
+            <div class="col-12 col-sm-7 picture" style="margin-top: 50px;">
+                <div class="slider-for">
+                    <div class="slide-2"><img src="152.jpg" alt=""></div>
+                    <div class="slide-3"><img src="es.jpg" alt=""></div>
+                    <div class="slide-1"><img src="4.jpg" alt=""></div>
+                    <div class="slide-4"><img src="w.jpg" alt=""></div>
+                </div>
+                <br />
+                <div class="slider-nav">
+                    <div class="slide-2"><img src="152.jpg" alt=""></div>
+                    <div class="slide-3"><img src="es.jpg" alt=""></div>
+                    <div class="slide-1"><img src="4.jpg" alt=""></div>
+                    <div class="slide-4"><img src="w.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-6 service">
+                <h5>服務內容</h5>
+                <hr>
+                <h6>項目</h6>
+                <div class="row s1">
+                    <div class="col-6">
+                        <p>到府陪伴</p>
+                        <p>到府餵食及陪伴貓貓</p>
+                    </div>
+                    <div class="col-3 price">
+                        <p>1hr$500</p>
+                    </div>
+                </div>
+                <div class="row s1">
+                    <div class="col-6">
+                        <p>到府遛貓</p>
+                        <p>到府帶貓貓出門散步</p>
+                    </div>
+                    <div class="col-3 price">
+                        <p>1hr$600</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <p style="color: rgb(73, 129, 233);margin: auto;padding-top: 35px;">詳細服務內容</p>
+                </div>
+
+            </div>
+            <div class="col-6">
+                <h5>關於我</h5>
+                <hr>
+                <p>5年經驗</p>
+                <h6>保母服務</h6>
+                <p>到府寵物保姆因應現代人喜愛養寵物卻無法時刻照料到的困擾而生，基本的服務項目為餵食、陪伴、清潔活動區域等，部分到府寵物保姆也提供遛貓服務</p>
+                <h6>額外服務</h6>
+                <p>-洗澡</p>
+                <p>-基礎美容</p>
+                <h6 style="display:inline;">保母評價</h6>
+                <span><i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    (0)
+                </span>
+                <p style="padding-top: 15px;">尚未有任何評價</p>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+<script>
+    $('.slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slider-nav'
+        
+    });
+    $('.slider-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        dots: true,
+        centerMode: true,
+        focusOnSelect: true
+    });
+
+
+</script>
+
+</html>
