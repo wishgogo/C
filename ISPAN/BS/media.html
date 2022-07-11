@@ -12,17 +12,28 @@
             color: blue;
             font-size: 3rem;
         }
+        .box4{
+            display: none;
+        }
 
         @media screen and (min-width:500px) {
             h1 {
                 color: rgb(0, 0, 0);
             }
+            .box4{
+            display: block;
+        }
         }
 
         @media screen and (min-width:900px) {
             h1 {
                 color: purple;
+                
             }
+            .box4{
+            display: block;
+            color:aquamarine;
+        }
         }
     </style>
 
@@ -30,6 +41,8 @@
 
 <body>
     <h1>Hello World</h1>
+    <h2 class="box4">Hello World</h2>
+
 </body>
 
 </html>
