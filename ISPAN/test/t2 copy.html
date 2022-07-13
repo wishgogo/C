@@ -17,160 +17,77 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-
-        }
-
-        .all {
-            background-color: #101c23;
-
-        }
-
-        .container {
-            position: relative;
-            max-width: 1200px;
-            padding-top: 150px;
-            padding-bottom: 150px;
-            font-size: 15px;
-            color: rgb(59, 56, 56);
-
-        }
-
-        .card {
-            margin: auto;
-            background-color: transparent;
-            border: 0px;
-        }
-
-        .title {
-            text-align: center;
-            font-weight: bold;
-            font-size: 25px;
-            color: whitesmoke;
-        }
-
-        .a1 {
-            font-weight: bold;
-            font-size: 23px;
-            text-align: center;
-            color: whitesmoke;
-        }
-
-        .autoplay {
-            max-width: 70%;
-            margin: auto;
-        }
-
-        .autoplay img {
-            max-width: 100%;
-            border-radius: 20%;
-            margin-bottom: 15px;
-            height: 400px;
-            margin: auto;
-        }
-
-        .slick-prev:before,
-        .slick-next:before {
-            color: darkcyan;
-        }
-
-        .heart {
-            position: absolute;
-            font-size: 4rem;
-            bottom: 0;
-            right: 25px;
-            color: rgb(187, 58, 58);
-        }
-
-        .re {
-            position: absolute;
-            font-size: 4rem;
-            bottom: 0;
-            left: 25px;
-            color: darkcyan;
-        }
-
-        .star {
-            position: absolute;
-            font-size: 4rem;
-            top: 100px;
-            right: 25px;
-            color: rgb(250, 209, 104);
-        }
-
         .box {
-            color: white;
-            padding: 1rem;
-            border: 1px rgb(219, 232, 248) solid;
-            border-radius: 3%;
-            box-shadow: 0 0 3rem rgba(134, 171, 190, 0.5) inset;
-            background: rgba(0, 0, 0, .3);
+            position: relative;
+            -webkit-user-select: none;
+            /* Safari */
+            -ms-user-select: none;
+            /* IE 10 and IE 11 */
+            user-select: none;
+            /* Standard syntax */
+        }
+
+        .box div {
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            border: 1px solid pink;
+            width: 200px;
+            position: absolute;
+            font-size: 40px;
+            left: 0px;
+            color: #fff;
+            top: 0px;
+            transition: all 0.4s ease 0s;
+            -webkit-transition: all 0.4s ease 0s;
+            -moz-transition: all 0.4s ease 0s;
+            -o-transition: all 0.4s ease 0s;
+            /* 隐藏背面 */
+            backface-visibility: hidden;
+        }
+
+        .box div:nth-child(1) {
+            background: red;
+            transform: rotateY(0deg)
+        }
+
+        .box div:nth-child(2) {
+            background: blue;
+            transform: rotateY(180deg)
+        }
+
+        /* 翻转加一个class */
+        .box.turn div:nth-child(1) {
+            transform: rotateY(-180deg);
+        }
+
+        .box.turn div:nth-child(2) {
+            transform: rotateY(0deg);
         }
     </style>
 </head>
 
 <body>
-    <div class="all">
-        <div class="container">
-
-            <!-- <div class="heart">
-                <span><i class="fa-solid fa-heart"></i></span>
-            </div>
-            <div class="re">
-                <span><i class="fa-solid fa-arrows-rotate"></i>
-                    </i></span>
-            </div>
-            <div class="star">
-                <span><i class="fa-solid fa-star"></i></i>
-                    </i></span>
-            </div> -->
-            <div class="box">
-                <div class="row col-12">
-                    <div class="autoplay">
-                        <div class="slide-2"><img src="12.jpg" alt=""></div>
-                        <div class="slide-3"><img src="13.jpg" alt=""></div>
-                        <div class="slide-1"><img src="14.jpg" alt=""></div>
-                    </div>
-                </div>
-
-                <div class="row detail">
-                    <div class="col-7 card">
-                        <div class="title">貓貓</div>
-                        <div class="a1">
-                            <p>英短 妹妹 五歲</p>
-                            <p>黃色</p>
-                            <p>高雄市鳳山區</p>
-                            <p>貓貓超級親人快來認養~~~</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="box turnboxs">
+        <div>正</div>
+        <div>反</div>
     </div>
-    </div>
+
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
 
     <script>
+        document.querySelector('.turnboxs').ondblclick = function () {
+            this.classList.toggle('turn')
+            return false
+        }
 
-
-        $('.autoplay').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
-        });
     </script>
+
 </body>
 
 </html>
