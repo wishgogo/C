@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Vue</title>
     <script src="../js/vue.js"></script>
 </head>
-
 <body>
-    <div id="app">
-        <!-- HTML DOM template-->
+    <div id="app"> <!-- HTML DOM template-->
         <!-- 請參考 16_表單物件_下拉式選單.html -->
         <select v-model="selectedYear">
             <option v-for="year in years">{{year}}</option>
@@ -21,21 +18,21 @@
         <select v-model="selectedDay">
             <option v-for="day in 31">{{day}}</option>
         </select>
-    </div>
+    </div>    
 
     <script>
         new Vue({
             el: '#app',
             data: {  // 變數放這裡!
                 message: 'Hello!',
-                colors: ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'],
-                months: ['January', 'February', 'March', 'April', 'May', 'June'],
-                years: [2018, 2019, 2020, 2021, 2022, 2023, 2024],
+                colors: ['red','orange','yellow','green','blue','indigo','violet'],
+                months: ['January','February','March','April','May','June'],
+                years: [2018,2019,2020,2021,2022,2023,2024],
                 selectedYear: new Date().getFullYear(),
                 selectedMonth: new Date().getMonth() + 1,
                 selectedDay: new Date().getDate(),
             },
-
+            
         })
         // for(let i = 0; i < 5; i++){}  // 處理陣列
         // for(let key in 物件或陣列){}   // 處理物件或陣列
@@ -56,10 +53,9 @@
         //     case 11:
         //         days = 30;
         //         break;
-        //     default:
+        //     default: 
         //         days = 28; 或 days = 29; // 西元年可以被 4 整除
         // }
     </script>
 </body>
-
 </html>
